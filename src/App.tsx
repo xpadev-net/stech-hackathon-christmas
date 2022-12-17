@@ -6,13 +6,14 @@ import { QuestionDisplay } from "@/QuestionDisplay";
 import { Response } from "@/@types/response";
 import { Question } from "@/@types/question";
 import {AnswerDisplay} from "@/AnswerDisplay";
+import {Answer} from "@/@types/answer";
 
 function App() {
   const [question, setQuestion] = useState<Response | undefined>();
 
   const init = useCallback(() => {
     (async () => {
-      const question = /*サーバーから取ってくる*/ {
+      const question = /*サーバーから取ってくる*/{type:"answer",name:"hoge"} as Answer/* {
         type: "question",
         step: 0,
         name: "あ",
@@ -21,7 +22,7 @@ function App() {
           { key: "2", name: "選択肢2" },
           { key: "3", name: "選択肢3" },
         ],
-      } as Question;
+      } as Question;*/
       setQuestion(question);
     })();
   }, []);

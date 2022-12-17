@@ -1,0 +1,16 @@
+.wrapper{
+  display: grid;
+  place-content: center;
+  place-items: center;
+  height: 100vh;
+  align-items: center;
+  .button{
+    border: none;
+    border-radius: 5px;
+    background-color: red;
+    color: white;
+    padding: 10px 40px;
+    font-weight: bold;
+    font-size: large;
+  }
+}

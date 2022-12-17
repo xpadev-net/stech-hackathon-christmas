@@ -1,6 +1,8 @@
 import { questionContext } from "@/context";
 import { useContext } from "react";
 import { Question } from "@/@types/question";
+import Styles from "@/QuestionDisplay.module.scss";
+import santaClaus from "@/assets/santaClaus.jpeg";
 
 const QuestionDisplay = () => {
   const { question, setQuestion } = useContext(questionContext);
@@ -19,18 +21,21 @@ const QuestionDisplay = () => {
     setQuestion(newQuestion);
   };
   return (
-    <div>
-      <h1>
+    <div className={Styles.wrapper}>
+      <img src={santaClaus} alt="サンタ"/>
+      <h1 className={Styles.question}>
         Q{question.step}. {question.name}
       </h1>
       {question.description && <p>{question.description}</p>}
-      {question.choices.map((choice) => {
-        return (
-          <button key={choice.key} onClick={() => update(choice.key)}>
-            {choice.name}
-          </button>
-        );
-      })}
+      <div className={Styles.choices}>
+        {question.choices.map((choice) => {
+          return (
+            <button key={choice.key} onClick={() => update(choice.key)} className={Styles.choice}>
+              {choice.name}
+            </button>
+          );
+        })}
+      </div>
     </div>
   );
 };
