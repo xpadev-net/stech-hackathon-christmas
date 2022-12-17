@@ -13,7 +13,7 @@ const AnswerDisplay = () => {
     return (
       <div className={Styles.wrapper}>
         <img src={santaClaus} alt={"サンタ"} />
-        <h1>あなたのイメージしたのは{question.name}ですか？</h1>
+        <h1 className={Styles.text}>あなたのイメージしたのは{question.name}ですか？</h1>
         <div className={Styles.buttons}>
           <button
             onClick={() => setQuestion({ type: "correct" })}
@@ -34,7 +34,7 @@ const AnswerDisplay = () => {
     return (
       <div className={Styles.wrapper}>
         <img src={santaClaus} alt={"サンタ"} />
-        <h1>当たりました！</h1>
+        <h1 className={Styles.text}>当たりました！</h1>
         <div className={Styles.buttons}>
           <button onClick={reset} className={Styles.button}>
             もどる
@@ -46,7 +46,7 @@ const AnswerDisplay = () => {
   return (
     <div className={Styles.wrapper}>
       <img src={santaClaus} alt={"サンタ"} />
-      <h1>わかりませんでした</h1>
+      <h1 className={Styles.text}>わかりませんでした</h1>
       <div className={Styles.buttons}>
         <button onClick={reset} className={Styles.button}>
           もどる
