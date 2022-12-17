@@ -1,14 +1,17 @@
 import { questionContext } from "@/context";
 import { useContext } from "react";
-import { Question } from "@/@types/question";
 import Styles from "@/QuestionDisplay.module.scss";
 import santaClaus from "@/assets/santaClaus.jpeg";
+import {Answer} from "@/@types/answer";
 
 const QuestionDisplay = () => {
   const { question, setQuestion } = useContext(questionContext);
   if (!question || !setQuestion || question.type !== "question") return <></>;
   const update = async (key: string) => {
-    const newQuestion = /*次の質問を取ってくる*/ {
+    const newQuestion = /*次の質問を取ってくる*/{
+      type: "answer",
+      name: "hoge",
+    } as Answer; /* {
       type: "question",
       step: 1,
       name: "い",
@@ -17,7 +20,7 @@ const QuestionDisplay = () => {
         { key: "2", name: "選択肢2" },
         { key: "3", name: "選択肢3" },
       ],
-    } as Question;
+    } as Question; */
     setQuestion(newQuestion);
   };
   return (
