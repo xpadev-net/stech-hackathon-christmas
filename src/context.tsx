@@ -1,9 +1,12 @@
 import { createContext, ReactNode } from "react";
 import { Response } from "@/@types/response";
+import { History } from "@/@types/history";
 
 type context = {
   question?: Response;
   setQuestion?: (data?: Response) => void;
+  history?: History;
+  setHistory?: (data: History) => void;
 };
 
 const questionContext = createContext<context>({});

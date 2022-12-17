@@ -6,9 +6,11 @@ import { QuestionDisplay } from "@/QuestionDisplay";
 import { Response } from "@/@types/response";
 import { Question } from "@/@types/question";
 import { AnswerDisplay } from "@/AnswerDisplay";
+import { History } from "@/@types/history";
 
 function App() {
   const [question, setQuestion] = useState<Response | undefined>();
+  const [history, setHistory] = useState<History>({});
 
   const init = useCallback(() => {
     (async () => {
@@ -30,7 +32,7 @@ function App() {
 
   return (
     <div className={Styles.wrapper}>
-      <QuestionContext value={{ question, setQuestion }}>
+      <QuestionContext value={{ question, setQuestion, history, setHistory }}>
         {question.type === "question" ? <QuestionDisplay /> : <AnswerDisplay />}
       </QuestionContext>
     </div>

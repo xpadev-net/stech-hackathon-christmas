@@ -4,16 +4,20 @@ import Styles from "@/AnswerDisplay.module.scss";
 import santaClaus from "@/assets/santaClaus.jpeg";
 
 const AnswerDisplay = () => {
-  const { question, setQuestion } = useContext(questionContext);
-  if (!question || !setQuestion || question.type === "question") return <></>;
+  const { question, setQuestion, setHistory } = useContext(questionContext);
+  if (!question || !setQuestion || !setHistory || question.type === "question")
+    return <></>;
   const reset = useCallback(() => {
     setQuestion();
+    setHistory({});
   }, []);
   if (question.type === "answer") {
     return (
       <div className={Styles.wrapper}>
         <img src={santaClaus} alt={"サンタ"} />
-        <h1 className={Styles.text}>あなたのイメージしたのは{question.name}ですか？</h1>
+        <h1 className={Styles.text}>
+          あなたのイメージしたのは{question.name}ですか？
+        </h1>
         <div className={Styles.buttons}>
           <button
             onClick={() => setQuestion({ type: "correct" })}
