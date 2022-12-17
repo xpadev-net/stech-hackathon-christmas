@@ -5,6 +5,7 @@ import { QuestionContext } from "@/context";
 import { QuestionDisplay } from "@/QuestionDisplay";
 import { Response } from "@/@types/response";
 import { Question } from "@/@types/question";
+import {AnswerDisplay} from "@/AnswerDisplay";
 
 function App() {
   const [question, setQuestion] = useState<Response | undefined>();
@@ -30,7 +31,9 @@ function App() {
   return (
     <div className={Styles.wrapper}>
       <QuestionContext value={{ question, setQuestion }}>
-        <QuestionDisplay />
+        {question.type==="question"?
+          <QuestionDisplay />:
+        <AnswerDisplay/>}
       </QuestionContext>
     </div>
   );

@@ -14,13 +14,12 @@ const AnswerDisplay = () => {
         <button onClick={reset}>もどる</button>
       </div>
     );
-  } else if (question.type === "giveUp") {
-    return (
-      <div>
-        <h1>わかりませんでした</h1>
-        <button onClick={reset}>もどる</button>
-      </div>
-    );
   }
+  return (
+    <div>
+      <h1>わかりませんでした</h1>
+      <button onClick={reset}>もどる</button>
+    </div>
+  );
 };
 export { AnswerDisplay };
