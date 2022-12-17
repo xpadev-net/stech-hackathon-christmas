@@ -15,7 +15,7 @@ const QuestionDisplay = () => {
     question.type !== "question"
   )
     return <></>;
-  const update = async (key: string) => {
+  const update = /*async*/ (key: string) => {
     const newHistory = { ...history, [question.key]: key };
     const newQuestion = /*次の質問を取ってくる*/ {
       type: "answer",
@@ -45,7 +45,7 @@ const QuestionDisplay = () => {
           return (
             <button
               key={choice.key}
-              onClick={() => update(choice.key)}
+              onClick={() => void update(choice.key)}
               className={Styles.choice}
             >
               {choice.name}

@@ -13,7 +13,7 @@ function App() {
   const [history, setHistory] = useState<History>({});
 
   const init = useCallback(() => {
-    (async () => {
+    void /*async*/ (() => {
       const question = /*サーバーから取ってくる*/ {
         type: "question",
         step: 0,
