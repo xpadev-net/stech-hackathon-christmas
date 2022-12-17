@@ -1,10 +1,12 @@
 type props = {
-  onClick: () => void
-}
+  onClick: () => void;
+};
 
-const Start = ({onClick}:props) => {
-  return <div>
-    <button onClick={onClick}>開始する</button>
-  </div>
-}
-export { Start};
+const Start = ({ onClick }: props) => {
+  return (
+    <div>
+      <button onClick={onClick}>開始する</button>
+    </div>
+  );
+};
+export { Start };

@@ -1,5 +1,5 @@
 import { createContext, ReactNode } from "react";
-import {Response} from "@/@types/response";
+import { Response } from "@/@types/response";
 
 type context = {
   question?: Response;
@@ -24,4 +24,4 @@ const QuestionContext = (props: contextProps): JSX.Element => {
     </questionContext.Provider>
   );
 };
-export { QuestionContext,questionContext };
+export { QuestionContext, questionContext };
