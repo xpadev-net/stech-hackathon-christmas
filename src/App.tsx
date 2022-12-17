@@ -5,15 +5,18 @@ import { QuestionContext } from "@/context";
 import { QuestionDisplay } from "@/QuestionDisplay";
 import { Response } from "@/@types/response";
 import { Question } from "@/@types/question";
-import {AnswerDisplay} from "@/AnswerDisplay";
-import {Answer} from "@/@types/answer";
+import { AnswerDisplay } from "@/AnswerDisplay";
+import { Answer } from "@/@types/answer";
 
 function App() {
   const [question, setQuestion] = useState<Response | undefined>();
 
   const init = useCallback(() => {
     (async () => {
-      const question = /*サーバーから取ってくる*/{type:"answer",name:"hoge"} as Answer/* {
+      const question = /*サーバーから取ってくる*/ {
+        type: "answer",
+        name: "hoge",
+      } as Answer; /* {
         type: "question",
         step: 0,
         name: "あ",
@@ -32,9 +35,7 @@ function App() {
   return (
     <div className={Styles.wrapper}>
       <QuestionContext value={{ question, setQuestion }}>
-        {question.type==="question"?
-          <QuestionDisplay />:
-        <AnswerDisplay/>}
+        {question.type === "question" ? <QuestionDisplay /> : <AnswerDisplay />}
       </QuestionContext>
     </div>
   );

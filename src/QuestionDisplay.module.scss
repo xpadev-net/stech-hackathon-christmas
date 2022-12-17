@@ -1,16 +1,16 @@
-.wrapper{
-  .question{
+.wrapper {
+  .question {
     padding: 10px 40px;
     border: solid 1px black;
     border-radius: 5px;
     text-align: center;
   }
-  .choices{
+  .choices {
     display: flex;
     flex-direction: row;
     margin-top: 5px;
     flex-wrap: wrap;
-    .choice{
+    .choice {
       padding: 10px;
       margin: 5px;
       flex: 1;

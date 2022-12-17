@@ -9,8 +9,10 @@ const Start = ({ onClick }: props) => {
   return (
     <div className={Styles.wrapper}>
       <h1>サンタネーター</h1>
-      <img src={SantaClaus} alt={"サンタ"} className={Styles.img}/>
-      <button onClick={onClick} className={Styles.button}>はじめる</button>
+      <img src={SantaClaus} alt={"サンタ"} className={Styles.img} />
+      <button onClick={onClick} className={Styles.button}>
+        はじめる
+      </button>
     </div>
   );
 };

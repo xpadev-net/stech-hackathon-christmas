@@ -12,31 +12,45 @@ const AnswerDisplay = () => {
   if (question.type === "answer") {
     return (
       <div className={Styles.wrapper}>
-        <img src={santaClaus} alt={"サンタ"}/>
+        <img src={santaClaus} alt={"サンタ"} />
         <h1>あなたのイメージしたのは{question.name}ですか？</h1>
         <div className={Styles.buttons}>
-          <button onClick={()=>setQuestion({type:"correct"})} className={Styles.button}>はい</button>
-          <button onClick={()=>setQuestion({type:"giveUp"})} className={Styles.button}>いいえ</button>
+          <button
+            onClick={() => setQuestion({ type: "correct" })}
+            className={Styles.button}
+          >
+            はい
+          </button>
+          <button
+            onClick={() => setQuestion({ type: "giveUp" })}
+            className={Styles.button}
+          >
+            いいえ
+          </button>
         </div>
       </div>
     );
-  }else if(question.type === "correct"){
+  } else if (question.type === "correct") {
     return (
       <div className={Styles.wrapper}>
-        <img src={santaClaus} alt={"サンタ"}/>
+        <img src={santaClaus} alt={"サンタ"} />
         <h1>当たりました！</h1>
         <div className={Styles.buttons}>
-          <button onClick={reset} className={Styles.button}>もどる</button>
+          <button onClick={reset} className={Styles.button}>
+            もどる
+          </button>
         </div>
       </div>
     );
   }
   return (
     <div className={Styles.wrapper}>
-      <img src={santaClaus} alt={"サンタ"}/>
+      <img src={santaClaus} alt={"サンタ"} />
       <h1>わかりませんでした</h1>
       <div className={Styles.buttons}>
-        <button onClick={reset} className={Styles.button}>もどる</button>
+        <button onClick={reset} className={Styles.button}>
+          もどる
+        </button>
       </div>
     </div>
   );

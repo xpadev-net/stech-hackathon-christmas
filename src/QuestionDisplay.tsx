@@ -22,7 +22,7 @@ const QuestionDisplay = () => {
   };
   return (
     <div className={Styles.wrapper}>
-      <img src={santaClaus} alt="サンタ"/>
+      <img src={santaClaus} alt="サンタ" />
       <h1 className={Styles.question}>
         Q{question.step}. {question.name}
       </h1>
@@ -30,7 +30,11 @@ const QuestionDisplay = () => {
       <div className={Styles.choices}>
         {question.choices.map((choice) => {
           return (
-            <button key={choice.key} onClick={() => update(choice.key)} className={Styles.choice}>
+            <button
+              key={choice.key}
+              onClick={() => update(choice.key)}
+              className={Styles.choice}
+            >
               {choice.name}
             </button>
           );
