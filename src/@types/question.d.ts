@@ -1,4 +1,5 @@
 export type Question = {
+  type: "question";
   step: number;
   name: string;
   description?: string;
