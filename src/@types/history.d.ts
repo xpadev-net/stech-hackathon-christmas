@@ -1,3 +1,1 @@
-export type History = {
-  [key: string]: string;
-};
+export type History = string[];

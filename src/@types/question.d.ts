@@ -1,6 +1,5 @@
 export type Question = {
   type: "question";
-  key: string;
   step: number;
   name: string;
   description?: string;

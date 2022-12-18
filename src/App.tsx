@@ -10,22 +10,24 @@ import { History } from "@/@types/history";
 
 function App() {
   const [question, setQuestion] = useState<Response | undefined>();
-  const [history, setHistory] = useState<History>({});
+  const [history, setHistory] = useState<History>([]);
 
   const init = useCallback(() => {
-    void /*async*/ (() => {
-      const question = /*サーバーから取ってくる*/ {
-        type: "question",
-        step: 0,
-        name: "あ",
-        choices: [
-          { key: "1", name: "選択肢1" },
-          { key: "2", name: "選択肢2" },
-          { key: "3", name: "選択肢3" },
-        ],
-      } as Question;
-      setQuestion(question);
-    })();
+    void (
+      /*async*/ (() => {
+        const question = /*サーバーから取ってくる*/ {
+          type: "question",
+          step: 0,
+          name: "カテゴリを選択してください",
+          choices: [
+            { key: "食べ物", name: "食べ物" },
+            { key: "ゲーム", name: "ゲーム" },
+            { key: "本", name: "本" },
+          ],
+        } as Question;
+        setQuestion(question);
+      })()
+    );
   }, []);
 
   if (!question) return <Start onClick={init} />;

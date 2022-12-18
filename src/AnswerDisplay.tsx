@@ -9,7 +9,7 @@ const AnswerDisplay = () => {
     return <></>;
   const reset = useCallback(() => {
     setQuestion();
-    setHistory({});
+    setHistory([]);
   }, []);
   if (question.type === "answer") {
     return (

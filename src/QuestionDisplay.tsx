@@ -2,7 +2,7 @@ import { questionContext } from "@/context";
 import { useContext } from "react";
 import Styles from "@/QuestionDisplay.module.scss";
 import santaClaus from "@/assets/santaClaus.jpeg";
-import { Answer } from "@/@types/answer";
+import { getQuestion } from "@/data";
 
 const QuestionDisplay = () => {
   const { question, setQuestion, history, setHistory } =
@@ -16,11 +16,14 @@ const QuestionDisplay = () => {
   )
     return <></>;
   const update = /*async*/ (key: string) => {
-    const newHistory = { ...history, [question.key]: key };
-    const newQuestion = /*次の質問を取ってくる*/ {
+    const newHistory = key !== "" ? [...history, key] : history;
+    const newQuestion = getQuestion(
+      newHistory,
+      question.step
+    ); /*次の質問を取ってくる*/ /*{
       type: "answer",
       name: "hoge",
-    } as Answer; /* {
+    } as Answer; */ /* {
       type: "question",
       step: 1,
       name: "い",
@@ -41,10 +44,10 @@ const QuestionDisplay = () => {
       </h1>
       {question.description && <p>{question.description}</p>}
       <div className={Styles.choices}>
-        {question.choices.map((choice) => {
+        {question.choices.map((choice, index) => {
           return (
             <button
-              key={choice.key}
+              key={index}
               onClick={() => void update(choice.key)}
               className={Styles.choice}
             >
